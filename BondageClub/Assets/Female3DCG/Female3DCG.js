@@ -59,7 +59,9 @@ var AssetFemale3DCG = [
 			{ Name: "AdultBabyDress1", Hide: ["ClothLower"], Value: 200 },
 			{ Name: "AdultBabyDress2", Hide: ["ClothLower"], Value: 200 },
 			{ Name: "AdultBabyDress3", Hide: ["ClothLower"], Value: 200 },
-			{ Name: "NurseUniform", Hide: ["ClothLower"], Value: -1 }
+			{ Name: "NurseUniform", Hide: ["ClothLower"], Value: 1 },
+			{ Name: "SantaOutfit1", Hide: ["ClothLower"], Value: 1 }
+
 		]
 	},
 
@@ -433,7 +435,7 @@ var AssetFemale3DCG = [
 			{ Name: "HempRope", SelfBondage: false, Value: 30, SetPose: ["BackBoxTie"], Effect: ["Block", "Prone", "Struggle"], Time: 20, Difficulty: 3 },
 			{ Name: "MetalCuffs", Priority: 23, Value: 50, SetPose: ["BackCuffs"], Effect: ["Block", "Prone", "Lock"], Time: 5 },
 			{ Name: "MetalCuffsKey", Wear: false, Value: 25, Effect: ["Unlock-MetalCuffs"], Time: 5 },
-			{ Name: "LeatherArmbinder", SelfBondage: false, Priority: 2, Value: 80, SetPose: ["BackElbowTouch"], Effect: ["Block", "Prone", "Struggle"], Time: 25, RemoveTime: 10, Difficulty: 10 },
+			{ Name: "LeatherArmbinder", SelfBondage: false, RemoveAtLogin: true, Priority: 2, Value: 80, SetPose: ["BackElbowTouch"], Effect: ["Block", "Prone", "Struggle"], Time: 25, RemoveTime: 10, Difficulty: 10 },
 			{ Name: "LeatherCuffs", Priority: 23, Random: false, Value: 100, AllowPose: ["BackBoxTie", "BackElbowTouch"], Effect: ["Lock"], Time: 20, Extended: true },
 			{ Name: "LeatherCuffsKey", Wear: false, Value: 40, Effect: ["Unlock-LeatherCuffs"], Time: 15 },
 			{ Name: "PaddedMittens", SelfBondage: false, Value: 50, Effect: ["Block", "Prone", "Struggle"], Extended: true, Time: 15, Difficulty: 4 },
