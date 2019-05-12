@@ -27,6 +27,7 @@ Cloth,AdultBabyDress1,Puffy Baby Dress
 Cloth,AdultBabyDress2,Bows Baby Dress
 Cloth,AdultBabyDress3,Flower Baby dress
 Cloth,NurseUniform,Nurse Uniform
+Cloth,SantaOutfit1,Santa
 ClothLower,,Bottom
 ClothLower,Skirt1,Skirt
 ClothLower,TennisSkirt1,Tennis
@@ -235,5 +236,5 @@ ItemMisc,WoodenMaidTray,Wooden Maid Tray
 ItemMisc,WoodenMaidTrayFull,Wooden Maid Tray Full
 ItemMisc,WoodenPaddle,Wooden Paddle
 ItemMisc,WoodenBox,Wooden Box
-ItemMisc,MilkCan,Water filled milk can 
+ItemMisc,MilkCan,Water filled milk can
 ItemMisc,WaterCell,Water torture Cell
