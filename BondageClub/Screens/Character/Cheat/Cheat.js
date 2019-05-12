@@ -1,6 +1,6 @@
 "use strict";
 var CheatBackground = "Sheet";
-var CheatAllow = false;
+var CheatAllow = true;
 var CheatList = ["DoubleReputation", "DoubleSkill", "DoubleMoney", "DoubleItemSpeed", "BlockRandomKidnap", "SkipTrialPeriod", "AutoShowTraits"];
 var CheatBonusList = ["DoubleMoney", "DoubleSkill"];
 var CheatBonusFactor = 2;
@@ -41,7 +41,7 @@ function CheatRun() {
 	MainCanvas.textAlign = "left";
 	for(var C = 0; C < CheatList.length; C++) {
 		DrawButton(150, 150 + (C * 100), 64, 64, "", "White", CheatActive(CheatList[C]) ? "Icons/Checked.png" : "");
-		DrawText(TextGet(CheatList[C]), 250, 182 + (C * 100), "Black", "Gray");		
+		DrawText(TextGet(CheatList[C]), 250, 182 + (C * 100), "Black", "Gray");
 	}
 
 	// Draw the exit button
@@ -52,13 +52,13 @@ function CheatRun() {
 
 // When the user clicks on the character info screen
 function CheatClick() {
-	
+
 	// When the user exits
 	if ((MouseX >= 1815) && (MouseX < 1905) && (MouseY >= 75) && (MouseY < 165)) {
 		CheatExport();
 		CommonSetScreen("Character", "Login");
 	}
-	
+
 	// When the user activates an option
 	for(var C = 0; C < CheatList.length; C++)
 		if ((MouseX >= 150) && (MouseX <= 800) && (MouseY >= 150 + (C * 100)) && (MouseY <= 214 + (C * 100))) {

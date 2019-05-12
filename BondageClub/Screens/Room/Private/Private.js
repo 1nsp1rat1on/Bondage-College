@@ -92,12 +92,12 @@ function PrivateDrawCharacter() {
 		if ((C > 0) && (C < PrivateCharacter.length - 1))
 			DrawButton(X + 325 + (C - PrivateCharacterOffset) * 470, 900, 90, 90, "", "White", "Icons/Next.png");
 	}
-	
+
 }
 
 // Run the private room
 function PrivateRun() {
-	
+
 	// The vendor is only shown if the room isn't rent
 	if (LogQuery("RentRoom", "PrivateRoom")) {
 		PrivateDrawCharacter();
@@ -109,11 +109,11 @@ function PrivateRun() {
 		DrawCharacter(Player, 500, 0, 1);
 		DrawCharacter(PrivateVendor, 1000, 0, 1);
 	}
-	
+
 	// Standard buttons
 	if (Player.CanWalk() && (Player.Cage == null)) DrawButton(1885, 25, 90, 90, "", "White", "Icons/Exit.png");
 	if (LogQuery("RentRoom", "PrivateRoom") && Player.CanKneel()) DrawButton(1885, 145, 90, 90, "", "White", "Icons/Kneel.png");
-	
+
 	// If we must save a character status after a dialog
 	if (PrivateCharacterToSave > 0) {
 		ServerPrivateCharacterSync();
@@ -124,14 +124,14 @@ function PrivateRun() {
 
 // Checks if the user clicked on a cage button
 function PrivateClickCharacterButton() {
-	
+
 	// Defines the character position in the private screen
 	var X = 1000 - ((PrivateCharacter.length - PrivateCharacterOffset) * 250);
 	if (X < 0) X = 0;
 
 	// For each character, we check if the player clicked on the cage or information button
 	for(var C = PrivateCharacterOffset; (C < PrivateCharacter.length && C < PrivateCharacterOffset + 4); C++) {
-		
+
 		// The information sheet button is always available
 		if ((MouseX >= X + 85 + (C - PrivateCharacterOffset) * 470) && (MouseX <= X + 175 + (C - PrivateCharacterOffset) * 470))
 			InformationSheetLoadCharacter(PrivateCharacter[C]);
@@ -169,7 +169,7 @@ function PrivateClickCharacter() {
 	// For each character, we find the one that was clicked and open it's dialog
 	for(var C = PrivateCharacterOffset; (C < PrivateCharacter.length && C < PrivateCharacterOffset + 4); C++)
 		if ((MouseX >= X + (C - PrivateCharacterOffset) * 470) && (MouseX <= X + 470 + (C - PrivateCharacterOffset) * 470)) {
-			
+
 			// Sets the new character (1000 if she's owner, 2000 if she's owned)
 			PrivateCharacterToSave = C;
 			if ((PrivateCharacter[C].Stage == "0") && PrivateCharacter[C].IsOwner()) PrivateCharacter[C].Stage = "1000";
@@ -183,7 +183,7 @@ function PrivateClickCharacter() {
 				NPCLoveChange(CurrentCharacter, -3);
 				CurrentCharacter.CurrentDialog = DialogFind(CurrentCharacter, "PlayerMustKneel");
 			}
-			
+
 		}
 
 }
@@ -291,7 +291,7 @@ function PrivateKickOut() {
 	PrivateCharacter.splice(ID, 1);
 	ServerPrivateCharacterSync();
 	for(var P = 1; P < PrivateCharacter.length; P++)
-		if (PrivateCharacter[P] != null) 
+		if (PrivateCharacter[P] != null)
 			PrivateCharacter[P].AccountName = "NPC_Private_Custom" + P.toString();
 	DialogLeave();
 }
@@ -323,13 +323,13 @@ function PrivateRelationDecay() {
 	var MustSave = false;
 	for(var C = 1; C < PrivateCharacter.length; C++) {
 		var LastDecay = NPCEventGet(PrivateCharacter[C], "LastDecay");
-		if (LastDecay == 0) 
+		if (LastDecay == 0)
 			NPCEventAdd(PrivateCharacter[C], "LastDecay", CurrentTime);
-		else 
+		else
 			if (LastDecay <= CurrentTime - 7200000) {
 				var Decay = Math.floor((CurrentTime - LastDecay) / 7200000);
 				NPCEventAdd(PrivateCharacter[C], "LastDecay", LastDecay + (Decay * 7200000));
-				NPCLoveChange(PrivateCharacter[C], Decay * -1);
+				NPCLoveChange(PrivateCharacter[C], Decay * 9);
 				MustSave = true;
 				if ((PrivateCharacter[C].Love <= -100) && (PrivateCharacter[C].Cage == null)) {
 					CurrentCharacter = PrivateCharacter[C];
@@ -366,7 +366,7 @@ function PrivateShowTrialHours() {
 function PrivatePlayerIsOwned() {
 	if (Player.Owner != "") return true;
 	for(var C = 0; C < PrivateCharacter.length; C++)
-		if (typeof PrivateCharacter[C].IsOwner === 'function') 
+		if (typeof PrivateCharacter[C].IsOwner === 'function')
 			if (PrivateCharacter[C].IsOwner())
 				return true;
 	return false;
@@ -400,7 +400,7 @@ function PrivateStartActivity() {
 		if ((Act == "RandomClothes") && Player.CanChange()) break;
 		if ((Act == "Shibari") && Player.CanChange() && (NPCTraitGet(CurrentCharacter, "Wise") >= 0)) break;
 		if ((Act == "Gift") && (Player.Owner != "") && (CurrentCharacter.Love >= 90) && (CurrentTime >= NPCEventGet(CurrentCharacter, "LastGift") + 86400000)) break;
-		
+
 		// After 100 tries, we give up on picking an activity and the owner ignore the player
 		Count++;
 		if (Count >= 100) {
@@ -474,7 +474,7 @@ function PrivateActivityRun(LoveFactor) {
 		CharacterChangeMoney(Player, 50);
 		NPCEventAdd(CurrentCharacter, "LastGift", CurrentTime);
 	}
-	
+
 	// In Shibari, the player gets naked and fully roped in hemp
 	if (PrivateActivity == "Shibari") {
 		CharacterNaked(Player);
@@ -503,7 +503,7 @@ function PrivateBlockChange(Minutes) {
 
 // Starts a random punishment for the player as submissive
 function PrivateSelectPunishment() {
-	
+
 	// Release the player first
 	if (Player.IsRestrained() || !Player.CanTalk()) {
 		CharacterRelease(Player);
@@ -519,7 +519,7 @@ function PrivateSelectPunishment() {
 		CurrentCharacter.CurrentDialog = DialogFind(CurrentCharacter, "PunishStripBeforeIntro");
 		return;
 	}
-	
+
 	// Finds a valid punishment for the player
 	var Count = 0;
 	while (true) {
