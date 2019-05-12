@@ -12,6 +12,7 @@ var AssetFemale3DCG = [
 		Asset: ["Small", "Normal", "Large", "XLarge"],
 	},
 
+
 	{
 		Group: "BodyLower",
 		Priority: 4,
@@ -35,14 +36,14 @@ var AssetFemale3DCG = [
 		Color: ["White", "Asian", "Black"],
 		Asset: ["Default"]
 	},
-	
+
 	{
 		Group: "Cloth",
 		Priority: 24,
 		ParentGroup: "BodyUpper",
 		AllowPose: ["BackBoxTie", "BackCuffs", "BackElbowTouch"],
 		Color: ["Default", "#202020", "#808080", "#bbbbbb", "#aa8080", "#80aa80", "#8080aa", "#aaaa80", "#80aaaa", "#aa80aa", "#cc3333", "#33cc33", "#3333cc", "#cccc33", "#33cccc", "#cc33cc"],
-		Asset: [ 
+		Asset: [
 			{ Name: "CollegeOutfit1", Hide: ["ClothLower"], Value: -1 },
 			{ Name: "MaidOutfit1", Hide: ["ClothLower"], Value: -1 },
 			{ Name: "StudentOutfit1", Hide: ["ClothLower"] },
@@ -61,7 +62,7 @@ var AssetFemale3DCG = [
 			{ Name: "NurseUniform", Hide: ["ClothLower"], Value: -1 }
 		]
 	},
-	
+
 	{
 		Group: "ClothLower",
 		Priority: 18,
@@ -80,7 +81,7 @@ var AssetFemale3DCG = [
 			{ Name: "MistressBottom", Hide: ["Panties"], Value: -1 }
 		]
 	},
-	 
+
 	{
 		Group: "HairBack",
 		Priority: 2,
@@ -131,7 +132,7 @@ var AssetFemale3DCG = [
 		Blink: true,
 		Asset: ["Eyes1", "Eyes2", "Eyes3", "Eyes4", "Eyes5", "Eyes6", "Eyes7", "Eyes8", "Eyes9", "Eyes10", "Eyes11"]
 	},
-	
+
 	{
 		Group: "Glasses",
 		Priority: 26,
@@ -152,7 +153,7 @@ var AssetFemale3DCG = [
 		Top: 190,
 		Asset: ["Mouth1", "Mouth2", "Mouth3", "Mouth4"]
 	},
-	
+
 	{
 		Group: "Nipples",
 		Priority: 7,
@@ -163,7 +164,7 @@ var AssetFemale3DCG = [
 		Top: 285,
 		Asset: ["Nipples1", "Nipples2"]
 	},
-	
+
 	{
 		Group: "Bra",
 		Priority: 14,
@@ -183,7 +184,7 @@ var AssetFemale3DCG = [
 			{ Name: "Corset4", Value: 30 }
 		]
 	},
-	
+
 	{
 		Group: "Gloves",
 		Priority: 23,
@@ -208,7 +209,7 @@ var AssetFemale3DCG = [
 		FullAlpha: false,
 		Asset: ["PussyLight1", "PussyLight2", "PussyLight3", "PussyDark1", "PussyDark2", "PussyDark3"]
 	},
-	
+
 	{
 		Group: "Panties",
 		Priority: 13,
@@ -282,7 +283,7 @@ var AssetFemale3DCG = [
 		Left: 125,
 		Top: 725,
 		Zone: [[100, 750, 300, 240]],
-		Asset: [ 
+		Asset: [
 			{ Name: "NylonRope", Value: 15, Time: 10 },
 			{ Name: "HempRope", Value: 30, Time: 10, RemoveTime: 15, Difficulty: 3 },
 			{ Name: "LeatherBelt", Value: 25, Time: 5 },
@@ -303,7 +304,7 @@ var AssetFemale3DCG = [
 		Left: 125,
 		Top: 500,
 		Zone: [[100, 580, 300, 170]],
-		Asset: [ 
+		Asset: [
 			{ Name: "NylonRope", Value: 15, Time: 10 },
 			{ Name: "HempRope", Value: 30, Time: 10, RemoveTime: 15, Difficulty: 3 },
 			{ Name: "LeatherBelt", Value: 25, Time: 5 }
@@ -360,7 +361,7 @@ var AssetFemale3DCG = [
 			{ Name: "StraponPanties", Effect: ["Chaste"], Block: ["ItemVulva", "ItemButt"], Value: 50, Prerequisite: "AccessVulva", Time: 15 }
 		]
 	},
-	
+
 	{
 		Group: "ItemTorso",
 		ParentGroup: "BodyUpper",
@@ -372,8 +373,8 @@ var AssetFemale3DCG = [
 		Left: 125,
 		Top: 200,
 		Zone: [[150, 340, 200, 80]],
-		Asset: [ 
-			{ Name: "NylonRopeHarness", Value: 25, Prerequisite: "AccessTorso", Time: 25 }, 
+		Asset: [
+			{ Name: "NylonRopeHarness", Value: 25, Prerequisite: "AccessTorso", Time: 25 },
 			{ Name: "HempRopeHarness", Value: 50, Prerequisite: "AccessTorso", Time: 25, RemoveTime: 35, Difficulty: 3 },
 			{ Name: "LeatherHarness", Value: 100, Prerequisite: "AccessTorso", Time: 15, RemoveTime: 10 },
 			{ Name: "AdultBabyHarness", Value: 80, Priority: 25, Time: 15, RemoveTime: 10 }
@@ -416,7 +417,7 @@ var AssetFemale3DCG = [
 			{ Name: "LeatherWhip", Value: 60, Wear: false, BuyGroup: "LeatherWhip", Bonus: [{Type: "KidnapBruteForce", Factor: 3}] }
 		]
 	},
-	
+
 	{
 		Group: "ItemArms",
 		ParentGroup: "BodyUpper",
@@ -424,10 +425,10 @@ var AssetFemale3DCG = [
 		Priority: 25,
 		Default: false,
 		Color: ["Default"],
-		Left: 125,		
+		Left: 125,
 		Top: 200,
 		Zone: [[50, 250, 100, 250], [350, 250, 100, 250]],
-		Asset: [ 
+		Asset: [
 			{ Name: "NylonRope", SelfBondage: false, Value: 15, SetPose: ["BackBoxTie"], Effect: ["Block", "Prone", "Struggle"], Time: 15 },
 			{ Name: "HempRope", SelfBondage: false, Value: 30, SetPose: ["BackBoxTie"], Effect: ["Block", "Prone", "Struggle"], Time: 20, Difficulty: 3 },
 			{ Name: "MetalCuffs", Priority: 23, Value: 50, SetPose: ["BackCuffs"], Effect: ["Block", "Prone", "Lock"], Time: 5 },
@@ -455,7 +456,7 @@ var AssetFemale3DCG = [
 		Left: 200,
 		Top: 190,
 		Zone: [[150, 210, 200, 50]],
-		Asset: [ 
+		Asset: [
 			{ Name: "LeatherCollar", Value: 40, Time: 5 },
 			{ Name: "SlaveCollar", Random: false, Effect: ["Lock"], Enable: false, Value: -1, Time: 5 },
 			{ Name: "ClubSlaveCollar", Random: false, Effect: ["Lock"], Enable: false, Value: -1, Time: 5 },
@@ -463,7 +464,7 @@ var AssetFemale3DCG = [
 			{ Name: "ShockCollarRemote", Random: false, Wear: false, Effect:["TriggerShock"], BuyGroup: "ShockCollar", Value: -1}
 		]
 	},
-	
+
 	{
 		Group: "ItemMouth",
 		Category: "Item",
@@ -474,7 +475,7 @@ var AssetFemale3DCG = [
 		Left: 150,
 		Top: 0,
 		Zone: [[150, 160, 200, 50]],
-		Asset: [ 
+		Asset: [
 			{ Name: "SmallClothGag", Effect: ["GagLight"], Value: 10, Time: 10 },
 			{ Name: "ClothCleaveGag", Effect: ["GagLight"], Value: 15, Time: 10 },
 			{ Name: "ClothOTMGag", Value: 20, Time: 10 },
@@ -501,7 +502,7 @@ var AssetFemale3DCG = [
 		Left: 150,
 		Top: 50,
 		Zone: [[150, 35, 200, 125]],
-		Asset: [ 
+		Asset: [
 			{ Name: "ClothBlindfold", Effect: ["BlindLight", "Prone"], Hide: ["Glasses"], Value: 20, Time: 5 },
 			{ Name: "LeatherBlindfold", Effect: ["BlindNormal", "Prone"], Hide: ["Glasses"], Value: 40, Time: 5 },
 			{ Name: "LeatherHood", Effect: ["BlindHeavy", "Prone", "GagLight"], Hide: ["HairFront", "HairBack", "Glasses", "ItemMouth", "Eyes"], Block: ["ItemMouth", "ItemNeck"], Value: 90, Time: 15 },
@@ -518,13 +519,13 @@ var AssetFemale3DCG = [
 		Color: ["Default"],
 		Top: -250,
 		Zone: [[25, 580, 75, 410], [400, 580, 75, 410]],
-		Asset: [ 
+		Asset: [
 			{ Name: "WoodenMaidTray", Enable: false, Value: -1 },
 			{ Name: "WoodenMaidTrayFull", Enable: false, Value: -1 },
 			{ Name: "WoodenPaddle", Enable: false, Value: -1 },
 			{ Name: "WoodenBox", RemoveAtLogin: true, Effect: ["BlindNormal", "Prone", "Enclose", "GagLight", "Struggle", "Freeze"], Enable: false, Value: -1 , Time: 15, RemoveTime: 10, Difficulty: 4 },
 			{ Name: "MilkCan", RemoveAtLogin: true, Effect: ["BlindHeavy", "Prone", "Enclose", "GagHeavy", "Struggle", "Freeze"], SetPose: ["Kneel"], Enable: false, Value: -1 , Time: 15, RemoveTime: 10, Difficulty: 5 },
-			{ Name: "WaterCell", RemoveAtLogin: true, Effect: ["Prone", "Enclose", "GagHeavy", "Struggle", "Freeze"], SetPose: ["Suspension", "LegsClosed"], Block: ["ItemFeet"], Enable: false, Value: -1, Time: 15, RemoveTime: 15, Difficulty: 5 }, 
+			{ Name: "WaterCell", RemoveAtLogin: true, Effect: ["Prone", "Enclose", "GagHeavy", "Struggle", "Freeze"], SetPose: ["Suspension", "LegsClosed"], Block: ["ItemFeet"], Enable: false, Value: -1, Time: 15, RemoveTime: 15, Difficulty: 5 },
 		]
 	}
 
